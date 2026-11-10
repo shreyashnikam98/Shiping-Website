@@ -1,0 +1,2 @@
+document.getElementById('yr').textContent=new Date().getFullYear();
+var f=document.getElementById('qf');if(f)f.addEventListener('submit',function(e){e.preventDefault();var ok=true;f.querySelectorAll('input,select').forEach(function(i){var v=i.value.trim(),bad=i.required&&!v||(i.type=='email'&&v&&!/^\S+@\S+\.\S+$/.test(v))||(i.type=='tel'&&v&&!/^[+\d][\d\s\/-]{6,}$/.test(v));i.classList.toggle('is-invalid',!!bad);if(bad)ok=false});document.getElementById('ok').classList.toggle('d-none',!ok);if(ok)f.reset()});
